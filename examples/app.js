@@ -43,7 +43,9 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ect');
 
 app.use(session({
-	secret: 'google-oauth-jwt'
+	secret: 'google-oauth-jwt',
+	resave: false,
+	saveUninitialized: false
 }));
 
 app.use(passport.initialize());
