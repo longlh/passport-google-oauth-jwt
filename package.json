@@ -14,7 +14,8 @@
   "keywords": [
     "passport",
     "google",
-    "jwt"
+    "jwt",
+    "oauth"
   ],
   "author": {
     "name": "Luc Hoang Long",
@@ -35,7 +36,6 @@
     "express": "^4.12.3",
     "express-session": "^1.11.1",
     "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-jscs": "^1.6.0",
     "load-grunt-tasks": "^3.1.0",
