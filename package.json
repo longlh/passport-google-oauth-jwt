@@ -1,0 +1,47 @@
+{
+  "name": "passport-google-oauth-jwt",
+  "version": "0.0.1",
+  "description": "Passport Strategy to Google OAuth, parsing JWT to get user's email",
+  "main": "./lib/passport-google-oauth-jwt/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node ./examples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/longlh/passport-google-oauth-jwt.git"
+  },
+  "keywords": [
+    "passport",
+    "google",
+    "jwt"
+  ],
+  "author": {
+    "name": "Luc Hoang Long",
+    "email": "d@dapps.me"
+  },
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/longlh/passport-google-oauth-jwt/issues"
+  },
+  "homepage": "https://github.com/longlh/passport-google-oauth-jwt",
+  "devDependencies": {
+    "ect": "^0.5.9",
+    "express": "^4.12.3",
+    "express-session": "^1.11.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-jscs": "^1.6.0",
+    "load-grunt-tasks": "^3.1.0"
+  },
+  "dependencies": {
+    "passport": "^0.2.1",
+    "request": "^2.55.0"
+  }
+}
