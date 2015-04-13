@@ -1,1 +1,1 @@
-# google-oauth-alternative
+# passport-google-oauth-jwt
