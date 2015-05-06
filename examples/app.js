@@ -25,7 +25,7 @@ passport.deserializeUser(function deserialize(obj, done) {
 passport.use(new GoogleOauthJWTStrategy({
 	clientId: GOOGLE_CLIENT_ID,
 	clientSecret: GOOGLE_CLIENT_SECRET
-}, function verfiy(token, info, refreshToken, done) {
+}, function verify(token, info, refreshToken, done) {
 	done(null, {
 		email: info.email
 	});
@@ -77,7 +77,8 @@ app.get('/logout', function(req, res) {
 app.get('/auth/google', passport.authenticate('google-oauth-jwt', {
 	callbackUrl: 'http://localhost:3000/auth/google/callback',
 	scope: [
-		'email'
+		'email',
+		'https://www.googleapis.com/auth/calendar'
 	]
 }), function(req, res) {
 	res.redirect('/');
