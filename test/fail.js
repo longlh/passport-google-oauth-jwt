@@ -62,6 +62,31 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 		})
 	});
 
+	it('should error because of not 200 response code', function(done) {
+		var google = nock('https://www.googleapis.com')
+			.post('/oauth2/v3/token')
+			.reply(500, {
+				error: {
+					code: 500,
+					message: 'Something wrong'
+				}
+			});
+
+		var strategy = new GoogleStrategy();
+
+		// stub error method
+		strategy.error = function() {
+			nock.cleanAll();
+			done();
+		};
+
+		strategy.authenticate({
+			query: {
+				code: 'xxx'
+			}
+		})
+	});
+
 	it('should error because of handling logic', function(done) {
 		var google = nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
