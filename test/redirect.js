@@ -1,3 +1,4 @@
+'use strict';
 require('./blanket');
 var should = require('should');
 var url = require('url');

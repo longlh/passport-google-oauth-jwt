@@ -23,7 +23,8 @@
         "require",
         "exports",
         "module",
-        "rek"
+        "describe",
+        "it"
     ],
     "indent": 4, // Specify indentation spacing
     "devel": true, // Allow development statements e.g. `console.log();`.
