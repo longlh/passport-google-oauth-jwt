@@ -1,4 +1,9 @@
-# passport-google-oauth-jwt
+passport-google-oauth-jwt
+=============
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][npm-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Build Status][travis-image]][travis-url]
 
 [Passport](http://passportjs.org/) strategy for authentication with [Google](http://www.google.com/) that meets the [Migrating to Google Sign-In Guide](https://developers.google.com/identity/sign-in/auth-migration).
 
@@ -52,6 +57,18 @@ For a complete, working example, refer to the [example](https://github.com/longl
 
 	$ node app.js
 
+## Tests
+	$ npm install
+	$ npm test
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
+
+[npm-image]: https://img.shields.io/npm/v/passport-google-oauth-jwt.svg?style=flat
+[npm-url]: https://www.npmjs.org/package/passport-google-oauth-jwt
+[downloads-image]: https://img.shields.io/npm/dm/passport-google-oauth-jwt.svg?style=flat
+[coveralls-image]: https://coveralls.io/repos/longlh/passport-google-oauth-jwt/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/r/longlh/passport-google-oauth-jwt?branch=master
+[travis-image]: https://travis-ci.org/longlh/passport-google-oauth-jwt.svg
+[travis-url]: https://travis-ci.org/longlh/passport-google-oauth-jwt
