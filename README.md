@@ -1,10 +1,8 @@
 # passport-google-oauth-jwt
 
-[Passport](http://passportjs.org/) strategy for authentication with [Google](http://www.google.com/), meet [Migrating to Google Sign-In Guide](https://developers.google.com/identity/sign-in/auth-migration).
+[Passport](http://passportjs.org/) strategy for authentication with [Google](http://www.google.com/) that meets the [Migrating to Google Sign-In Guide](https://developers.google.com/identity/sign-in/auth-migration).
 
-The strategy will get email of signed-in account by parsing JWT returned from Google OAuth. It does not get full Google profile, but it does not require [Google + API](https://developers.google.com/+/api/auth-migration#sign-in) enabled in [Google Developers Console](https://console.developers.google.com/).
-
-If you want to get a full Google profile, please consider using [Passport-Google-OAuth](https://github.com/jaredhanson/passport-google-oauth).
+The strategy will get access_token, refresh_token and email (with right scopes) of signed-in account by parsing JWT returned from Google OAuth. It does not get full Google profile, but it does not require [Google + API](https://developers.google.com/+/api/auth-migration#sign-in) enabled in [Google Developer's Console](https://console.developers.google.com/). If you want to get a full one, please consider using [passport-google-oauth](https://github.com/jaredhanson/passport-google-oauth).
 
 ## Install
 	$ npm install passport-google-oauth-jwt
@@ -42,7 +40,7 @@ app.get('/auth/google', passport.authenticate('google-oauth-jwt', {
 
 app.get('/auth/google/callback', passport.authenticate('google-oauth-jwt', {
 	callbackUrl: 'http://localhost:3000/auth/google/callback'
-}), function(req, res) {
+}), function onAuthenticate(req, res) {
 	// Successful authentication, redirect home
 	res.redirect('/');
 });
