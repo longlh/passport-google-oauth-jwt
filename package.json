@@ -4,7 +4,7 @@
   "description": "Passport Strategy to Google OAuth, parsing JWT to get user's email",
   "main": "./lib/passport-google-oauth-jwt/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test",
+    "test": "./node_modules/.bin/mocha ./test -R html-cov > coverage.html",
     "start": "node ./examples/app.js"
   },
   "repository": {
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/longlh/passport-google-oauth-jwt",
   "devDependencies": {
+    "blanket": "^1.1.6",
     "ect": "^0.5.9",
     "express": "^4.12.3",
     "express-session": "^1.11.1",
@@ -40,6 +41,7 @@
     "grunt-jscs": "^1.6.0",
     "load-grunt-tasks": "^3.1.0",
     "mocha": "^2.2.4",
+    "mockery": "^1.4.0",
     "passport": "^0.2.1",
     "should": "^6.0.1"
   },
