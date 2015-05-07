@@ -21,7 +21,7 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 	});
 
 	it('should error because of error response', function(done) {
-		var google = nock('https://www.googleapis.com')
+		nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
 			.replyWithError('fake error');
 
@@ -29,7 +29,6 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 
 		// stub error method
 		strategy.error = function() {
-			nock.cleanAll();
 			done();
 		};
 
@@ -37,11 +36,11 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 			query: {
 				code: 'xxx'
 			}
-		})
+		});
 	});
 
 	it('should error because of bad response', function(done) {
-		var google = nock('https://www.googleapis.com')
+		nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
 			.reply(200, {
 				id_token: 'xxxx'
@@ -51,7 +50,6 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 
 		// stub error method
 		strategy.error = function() {
-			nock.cleanAll();
 			done();
 		};
 
@@ -59,11 +57,11 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 			query: {
 				code: 'xxx'
 			}
-		})
+		});
 	});
 
 	it('should error because of not 200 response code', function(done) {
-		var google = nock('https://www.googleapis.com')
+		nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
 			.reply(500, {
 				error: {
@@ -76,7 +74,6 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 
 		// stub error method
 		strategy.error = function() {
-			nock.cleanAll();
 			done();
 		};
 
@@ -84,11 +81,11 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 			query: {
 				code: 'xxx'
 			}
-		})
+		});
 	});
 
 	it('should error because of handling logic', function(done) {
-		var google = nock('https://www.googleapis.com')
+		nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
 			.reply(200, {
 				id_token: 'xxx.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20ifQ==.xxx'
@@ -100,7 +97,6 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 
 		// stub error method
 		strategy.error = function(err) {
-			nock.cleanAll();
 			should.deepEqual(err, {});
 			done();
 		};
@@ -109,11 +105,11 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 			query: {
 				code: 'xxx'
 			}
-		})
+		});
 	});
 
 	it('should fail because of handling logic', function(done) {
-		var google = nock('https://www.googleapis.com')
+		nock('https://www.googleapis.com')
 			.post('/oauth2/v3/token')
 			.reply(200, {
 				id_token: 'xxx.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20ifQ==.xxx'
@@ -125,7 +121,6 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 
 		// stub info method
 		strategy.fail = function(info) {
-			nock.cleanAll();
 			should.deepEqual(info, {});
 			done();
 		};
@@ -134,6 +129,10 @@ describe('GoogleOauthJWTStrategy authenticate', function() {
 			query: {
 				code: 'xxx'
 			}
-		})
+		});
+	});
+
+	afterEach(function() {
+		nock.cleanAll();
 	});
 });

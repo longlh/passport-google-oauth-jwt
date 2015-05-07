@@ -55,7 +55,8 @@ app.get('/auth/google/callback', passport.authenticate('google-oauth-jwt', {
 
 For a complete, working example, refer to the [example](https://github.com/longlh/passport-google-oauth-jwt/tree/master/examples).
 
-	$ node app.js
+	$ npm install
+	$ npm start
 
 ## Tests
 	$ npm install

@@ -4,7 +4,7 @@
   "description": "Passport Strategy to Google OAuth, parsing JWT to get user's email",
   "main": "./lib/passport-google-oauth-jwt/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test",
+    "test": "grunt && \"./node_modules/.bin/mocha\" ./test",
     "start": "node ./examples/app.js"
   },
   "repository": {
