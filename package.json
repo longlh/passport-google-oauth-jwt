@@ -4,7 +4,7 @@
   "description": "Passport Strategy to Google OAuth, parsing JWT to get user's email",
   "main": "./lib/passport-google-oauth-jwt/index.js",
   "scripts": {
-    "test": "grunt && \"./node_modules/.bin/mocha\" ./test",
+    "test": "./node_modules/.bin/grunt && \"./node_modules/.bin/mocha\" ./test",
     "start": "node ./examples/app.js"
   },
   "repository": {
@@ -15,7 +15,8 @@
     "passport",
     "google",
     "jwt",
-    "oauth"
+    "oauth",
+    "strategy"
   ],
   "author": {
     "name": "Luc Hoang Long",
@@ -38,6 +39,7 @@
     "express": "^4.12.3",
     "express-session": "^1.11.1",
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-jscs": "^1.6.0",
     "load-grunt-tasks": "^3.1.0",
